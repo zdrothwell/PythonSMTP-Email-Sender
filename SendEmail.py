@@ -9,8 +9,8 @@ load_dotenv("SMTP.env")
 
 SMTP_HOST = os.getenv("SMTP_HOST")
 SMTP_PORT = os.getenv("SMTP_PORT")
-USERNAME = os.getenv("GMAIL_USER")
-PASSWORD = os.getenv("GMAIL_APP_PASS")
+USERNAME = os.getenv("EMAIL_USER")
+PASSWORD = os.getenv("EMAIL_APP_PASS")
  
 if __name__ == "__main__":
     if len(sys.argv) < 3:
