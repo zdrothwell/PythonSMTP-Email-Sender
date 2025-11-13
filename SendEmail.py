@@ -14,15 +14,18 @@ PASSWORD = os.getenv("EMAIL_APP_PASS")
  
 if __name__ == "__main__":
     if len(sys.argv) < 3:
-        print(f"Usage: python3 {sys.argv[0]} <EMAIL> <MESSAGE>")
+        print(f"Usage: python3 {sys.argv[0]} <EMAIL> <SUBJECT> <MESSAGE>")
         sys.exit(0)
  
     email = sys.argv[1]
     subject = sys.argv[2]
     message = sys.argv[3]
 
-    safe_message = html.escape(message)
+    # Escape the message to use in HTML template
+    safe_message = html.escape(message) 
 
+    # HTML template to be changed to fit needs
+    # "{safe_message}" is where the text from the command line will go
     html_template = f"""
     <html>
       <body style="font-family: Arial, sans-serif; color: #333;">
